@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <p><%= @task.details %></p>
+      <%if @task.completed == true
+        completed = "This task has been completed"
+    else
+       completed = "This task has not been completed"
+    end%>
+    <p><%=completed%></p>
+
+    <%= link_to edit_task_path(@task), class: 'btn btn-secondary' do %>
+    <p>Edit the Task</p>
+    <% end %>
+
+    <%#= link_to 'Text you see', prefix_path  %>
+    <%= link_to tasks_path do %>
+      <p>back to the task list -></p>
+    <% end %>
